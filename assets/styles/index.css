@@ -1,3 +1,60 @@
 * {
     box-sizing: border-box;
 }
+body {
+    border: 1px solid black;
+    margin: 0;
+    text-align: center;
+}
+img {
+    display: block;
+}
+.container {
+    border: 1px solid blue;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hero-img {
+    margin-left: auto;
+    margin-right: auto;
+}
+.action button {
+    padding: 8px;
+    border-radius: 15px;
+}
+.action button:hover {
+    cursor: pointer;
+}
+.action {
+    display: flex;
+    justify-content: space-evenly;
+}
+.point {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.point .player-point,.pc-point {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.point .player-title {
+    font-size: 30px;
+}
+
+.player-total {
+    font-size: 40px;
+}
+.pc-total {
+    font-size: 40px;
+}
+.total {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+.played {
+    font-size: 40px;
+}
