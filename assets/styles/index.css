@@ -58,3 +58,8 @@ img {
 .played {
     font-size: 40px;
 }
+.reset {
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+}

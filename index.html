@@ -12,29 +12,93 @@
         </header>
         <body>
             <img class="hero-img" src="./assets/images/image.png" alt="" width="500px">
-            <h2>Select your Option</h2>
             <h3>Total playing Games will be: 5</h3>
-
+            
             <div class="action">
-                <button><img src="./assets/images/hand-paper.png" alt="" width="100px"></button>
-                <button><img src="./assets/images/raise-hand.png" alt="" width="100px"></button>
-                <button><img src="./assets/images/scissors.png" alt="" width="100px"></button>
+                <button onclick="playPaper()" id="playPaperButton"><img src="./assets/images/hand-paper.png" alt="" width="100px"></button>
+                <button onclick="playRock()" id="playRockButton"><img src="./assets/images/raise-hand.png" alt="" width="100px"></button>
+                <button onclick="playScissor()" id="playScissorButton"><img src="./assets/images/scissors.png" alt="" width="100px"></button>
             </div>
             <div class="point">
                 <div class="player-point">
                     <span class="player-title">Player</span>
-                    <span class="player-total">0</span>
+                    <span id="playerPoint" class="player-total">0</span>
                 </div>
                 <div class="pc-point">
                     <span class="player-title">PC</span>
-                    <span class="pc-total">0</span>
+                    <span id="pcPoint" class="pc-total">0</span>
                 </div>
             </div>
+            <h2>Select your Option</h2>
             <div class="total">Played Game:</div>
-            <div class="played">0</div>
+            <div id='gamecounter' class="played">0</div>
+            <button onclick="resetGame()" id="resetButton" class="reset">Reset Game!</button>
         </body>
     </div>
     <script>
+        const gameCounterPlus = () => {
+            document.getElementById('gamecounter').innerText = parseInt(document.getElementById('gamecounter').innerText) + 1 
+        }
+        const pcOption = () => {
+            //(Rock is 1)  (Paper is 2)  (Scissor is 3)
+            return Math.floor(1 + Math.random() * 3)
+        }
+        const playPaper = () => {
+            let pcChoice = pcOption()
+            if (pcChoice === 1) {
+                document.getElementById('playerPoint').innerText =parseInt(document.getElementById('playerPoint').innerText) + 1 
+            } else if (pcChoice === 2) {
+                console.log('equal')
+            } else {
+                document.getElementById('pcPoint').innerText =parseInt(document.getElementById('pcPoint').innerText) + 1 
+            }
+            gameCounterPlus()
+            checkWinner()
+        }
 
+        const playRock = () => {
+            let pcChoice = pcOption()
+            if (pcChoice === 3) {
+                document.getElementById('playerPoint').innerText =parseInt(document.getElementById('playerPoint').innerText) + 1 
+            } else if (pcChoice === 1) {
+                console.log('equal')
+            } else {
+                document.getElementById('pcPoint').innerText =parseInt(document.getElementById('pcPoint').innerText) + 1 
+            }
+            gameCounterPlus()
+            checkWinner()
+        }
+        const playScissor = () => {
+            let pcChoice = pcOption()
+            if (pcChoice === 2) {
+                document.getElementById('playerPoint').innerText =parseInt(document.getElementById('playerPoint').innerText) + 1 
+            } else if (pcChoice === 3) {
+                console.log('equal')
+            } else {
+                document.getElementById('pcPoint').innerText =parseInt(document.getElementById('pcPoint').innerText) + 1 
+            }
+            gameCounterPlus()
+            checkWinner()
+        }
+        const checkWinner = () => {
+            if(parseInt(document.getElementById('playerPoint').innerText) + parseInt(document.getElementById('pcPoint').innerText) === 5) {
+                document.getElementById('playRockButton').disabled = true
+                document.getElementById('playRockButton').style.opacity = '0.5'
+                document.getElementById('playRockButton').style.cursor = 'not-allowed'
+
+                document.getElementById('playPaperButton').disabled = true
+                document.getElementById('playPaperButton').style.opacity = '0.5'
+                document.getElementById('playPaperButton').style.cursor = 'not-allowed'
+
+                document.getElementById('playScissorButton').disabled = true
+                document.getElementById('playScissorButton').style.opacity = '0.5'
+                document.getElementById('playScissorButton').style.cursor = 'not-allowed'
+
+                document.getElementById('resetButton').innerText = 'Play Again!'
+            }
+        }
+        const resetGame = () => {
+            window.location.reload()
+        }
     </script>
 </html>
