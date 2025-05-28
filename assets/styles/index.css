@@ -68,6 +68,7 @@ img {
     border-radius: 15px;
     font-size: 20px;
     font-family: nunito ;
+    cursor: pointer;
 }
 
 .selections {
@@ -85,9 +86,14 @@ img {
 #player-choice, #pc-choice {
     display: flex;
     margin-top: 20px;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 1s ease-in-out;
+    /* background-color: rgb(241, 241, 217); */
+    /* background-color: rgb(103, 203, 103);
+    background-color: rgb(227, 132, 132); */
 }
 .selections img {
     transition: all 1s ease-in-out;
     opacity: 0.1;
-    /* visibility: hidden; */
 }
