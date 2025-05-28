@@ -4,8 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <link rel="stylesheet" href="./assets/styles/index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     </head>
-    <link rel="stylesheet" href="./assets/styles/index.css">
     <div class="container">
         <header>
             <h1>Welcome to Rock Paper Scissors Game!</h1>
@@ -19,6 +22,27 @@
                 <button onclick="playRock()" id="playRockButton"><img src="./assets/images/raise-hand.png" alt="" width="100px"></button>
                 <button onclick="playScissor()" id="playScissorButton"><img src="./assets/images/scissors.png" alt="" width="100px"></button>
             </div>
+            <hr>
+            <!-- <h2>Select your Option</h2> -->
+            <div class="selections">
+                <div class="player-indicator">
+                    <span>Your choice:</span>
+                    <span id="player-choice">
+                        <img id = 'playerPaperSign' src="./assets/images/hand-paper.png" alt="" width="70px">
+                        <img id = 'playerRockSign' src="./assets/images/raise-hand.png" alt="" width="70px">
+                        <img id = 'playerScissorSign' src="./assets/images/scissors.png" alt="" width="70px">
+                    </span>
+                </div>
+                <div class="pc-indicator">
+                    <span>PC's choice:</span>
+                    <span id="pc-choice">
+                        <img id = 'pcPaperSign' src="./assets/images/hand-paper.png" alt="" width="70px">
+                        <img id = 'pcRockSign' src="./assets/images/raise-hand.png" alt="" width="70px">
+                        <img id = 'pcScissorSign' src="./assets/images/scissors.png" alt="" width="70px">
+                    </span>
+                </div>
+            </div>
+            <hr>
             <div class="point">
                 <div class="player-point">
                     <span class="player-title">Player</span>
@@ -29,7 +53,6 @@
                     <span id="pcPoint" class="pc-total">0</span>
                 </div>
             </div>
-            <h2>Select your Option</h2>
             <div class="total">Played Game:</div>
             <div id='gamecounter' class="played">0</div>
             <button onclick="resetGame()" id="resetButton" class="reset">Reset Game!</button>
@@ -45,6 +68,12 @@
         }
         const playPaper = () => {
             let pcChoice = pcOption()
+            showPcChoice (pcChoice)
+
+            document.getElementById('playerRockSign').style.opacity = '0.1'
+            document.getElementById('playerPaperSign').style.opacity = '1'
+            document.getElementById('playerScissorSign').style.opacity = '0.1'
+
             if (pcChoice === 1) {
                 document.getElementById('playerPoint').innerText =parseInt(document.getElementById('playerPoint').innerText) + 1 
             } else if (pcChoice === 2) {
@@ -58,6 +87,12 @@
 
         const playRock = () => {
             let pcChoice = pcOption()
+            showPcChoice (pcChoice)
+
+            document.getElementById('playerRockSign').style.opacity = '1'
+            document.getElementById('playerPaperSign').style.opacity = '0.1'
+            document.getElementById('playerScissorSign').style.opacity = '0.1'
+
             if (pcChoice === 3) {
                 document.getElementById('playerPoint').innerText =parseInt(document.getElementById('playerPoint').innerText) + 1 
             } else if (pcChoice === 1) {
@@ -70,6 +105,12 @@
         }
         const playScissor = () => {
             let pcChoice = pcOption()
+            showPcChoice (pcChoice)
+
+            document.getElementById('playerRockSign').style.opacity = '0.1'
+            document.getElementById('playerPaperSign').style.opacity = '0.1'
+            document.getElementById('playerScissorSign').style.opacity = '1'
+
             if (pcChoice === 2) {
                 document.getElementById('playerPoint').innerText =parseInt(document.getElementById('playerPoint').innerText) + 1 
             } else if (pcChoice === 3) {
@@ -95,6 +136,21 @@
                 document.getElementById('playScissorButton').style.cursor = 'not-allowed'
 
                 document.getElementById('resetButton').innerText = 'Play Again!'
+            }
+        }
+        const showPcChoice = (num) => {
+            if (num ===1) {
+                document.getElementById('pcRockSign').style.opacity = '1'
+                document.getElementById('pcPaperSign').style.opacity = '0.1'
+                document.getElementById('pcScissorSign').style.opacity = '0.1'
+            } else if (num === 2) {
+                document.getElementById('pcRockSign').style.opacity = '0.1'
+                document.getElementById('pcPaperSign').style.opacity = '1'
+                document.getElementById('pcScissorSign').style.opacity = '0.1'
+            } else {
+                document.getElementById('pcRockSign').style.opacity = '0.1'
+                document.getElementById('pcPaperSign').style.opacity = '0.1'
+                document.getElementById('pcScissorSign').style.opacity = '1'
             }
         }
         const resetGame = () => {

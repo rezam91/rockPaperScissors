@@ -14,6 +14,8 @@ img {
     width: 800px;
     margin-left: auto;
     margin-right: auto;
+    /* font-family: comfortaa ; */
+    font-family: nunito ;
 }
 .hero-img {
     margin-left: auto;
@@ -29,9 +31,10 @@ img {
 .action {
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 20px;
 }
 .point {
-    margin-top: 50px;
+    margin-top: 40px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -59,7 +62,32 @@ img {
     font-size: 40px;
 }
 .reset {
+    margin-top: 30px;
     width: 150px;
     height: 40px;
-    border-radius: 20px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family: nunito ;
+}
+
+.selections {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.player-indicator, .pc-indicator {
+    display: flex;
+    flex-direction: column ;
+    font-size: 25px;
+}
+
+#player-choice, #pc-choice {
+    display: flex;
+    margin-top: 20px;
+}
+.selections img {
+    transition: all 1s ease-in-out;
+    opacity: 0.1;
+    /* visibility: hidden; */
 }
