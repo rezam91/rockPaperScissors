@@ -56,6 +56,11 @@
             <div class="total">Played Game:</div>
             <div id='gamecounter' class="played">0</div>
             <button onclick="resetGame()" id="resetButton" class="reset">Reset Game!</button>
+            <div id="present-winner">
+                <span id="result-presenter">You Won!</span>
+                <img id="loser-sign" src="./assets/images/loser.png" alt="" width="250px">
+                <img id="winner-sign" src="./assets/images/success.png" alt="" width="250px">
+            </div>
         </body>
     </div>
     <script>
@@ -148,6 +153,17 @@
                 document.getElementById('playScissorButton').style.cursor = 'not-allowed'
 
                 document.getElementById('resetButton').innerText = 'Play Again!'
+                document.getElementById('present-winner').style.top = '100px'
+                
+                if (parseInt(document.getElementById('playerPoint').innerText) > parseInt(document.getElementById('pcPoint').innerText)) {
+                    document.getElementById('winner-sign').style.display = 'block'
+                    document.getElementById('loser-sign').style.display = 'none'
+                } else {
+                    document.getElementById('winner-sign').style.display = 'none'
+                    document.getElementById('loser-sign').style.display = 'block'
+                    document.getElementById('result-presenter').innerText = 'You Lost'
+                    document.getElementById('present-winner').style.backgroundColor = 'rgb(215, 115, 115)'
+                }
             }
         }
         const showPcChoice = (num) => {

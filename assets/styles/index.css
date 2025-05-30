@@ -2,7 +2,6 @@
     box-sizing: border-box;
 }
 body {
-    border: 1px solid black;
     margin: 0;
     text-align: center;
 }
@@ -10,7 +9,7 @@ img {
     display: block;
 }
 .container {
-    border: 1px solid blue;
+    border: 1px solid gray;
     width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -63,10 +62,12 @@ img {
 }
 .reset {
     margin-top: 30px;
-    width: 150px;
-    height: 40px;
+    padding: 15px 30px;
+    width: 300px;
+    height:80px;
     border-radius: 15px;
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: 700;
     font-family: nunito ;
     cursor: pointer;
 }
@@ -89,11 +90,25 @@ img {
     padding: 8px;
     border-radius: 8px;
     transition: all 1s ease-in-out;
-    /* background-color: rgb(241, 241, 217); */
-    /* background-color: rgb(103, 203, 103);
-    background-color: rgb(227, 132, 132); */
 }
 .selections img {
     transition: all 1s ease-in-out;
     opacity: 0.1;
+}
+
+#present-winner {
+    position: fixed;
+    top: -1000px;
+    left:50%;
+    transform: translateX(-50%);
+    background-color: rgb(24, 146, 24);
+    padding: 50px;
+    border-radius: 20px;
+    transition: all 1s ease-in-out;
+}
+#present-winner span {
+    font-size: 48px;
+}
+#present-winner img {
+    margin-top: 30px;
 }
