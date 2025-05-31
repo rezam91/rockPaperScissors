@@ -13,7 +13,6 @@ img {
     width: 800px;
     margin-left: auto;
     margin-right: auto;
-    /* font-family: comfortaa ; */
     font-family: nunito ;
 }
 .hero-img {
@@ -31,6 +30,9 @@ img {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 20px;
+}
+#playPaperButton:hover, #playRockButton:hover,#playScissorButton:hover {
+    background-color:beige;
 }
 .point {
     margin-top: 40px;
@@ -62,6 +64,7 @@ img {
 }
 .reset {
     margin-top: 30px;
+    margin-bottom: 30px;
     padding: 15px 30px;
     width: 300px;
     height:80px;
@@ -70,6 +73,9 @@ img {
     font-weight: 700;
     font-family: nunito ;
     cursor: pointer;
+}
+.reset:hover {
+    background-color:beige;
 }
 
 .selections {
